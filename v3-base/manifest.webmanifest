@@ -1,0 +1,14 @@
+{
+  "name": "GENEVIEVE HEALTH — Irene’s Psychology Practice Safety Demo",
+  "short_name": "Irene Safety",
+  "description": "Controlled emergency cover, psychology-practice continuity, staff support and evidence demonstration.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5eff2",
+  "theme_color": "#171217",
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

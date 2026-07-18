@@ -1,0 +1,25 @@
+DEPLOYMENT — CONTROLLED DEMO ONLY
+
+LOCAL WINDOWS DEMO
+1. Extract the ZIP.
+2. Open index.html, or run: python -m http.server 8080
+3. Open http://localhost:8080
+
+STATIC HOST DEMO
+The root folder includes index.html, vercel.json, _redirects, manifest and service worker.
+Upload the CONTENTS of this folder to a private/static demonstration project.
+Do not connect a production domain or enter real information until authorised.
+
+PRE-DEMO CHECK
+- Confirm logo appears.
+- Confirm build marker says MIND-2.0.0.
+- Change each demo role.
+- Open all navigation pages.
+- Run each scenario once, then Reset demo.
+- Test exports.
+- Test on the exact laptop/tablet/phone used in the presentation.
+
+PRODUCTION IS A SEPARATE BUILD
+Production requires secure identity, role permissions, encrypted backend, audit-log protection,
+backup/recovery, privacy and cybersecurity review, approved clinical governance, practice-system
+integration, incident and emergency testing, staff training and written acceptance criteria.
