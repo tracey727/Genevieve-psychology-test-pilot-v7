@@ -1,0 +1,160 @@
+import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+
+export const hubUsers = sqliteTable("hub_users", {
+  id: text("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  displayName: text("display_name").notNull(),
+  role: text("role").notNull(),
+  status: text("status").notNull().default("active"),
+  permissions: text("permissions").notNull().default("{}"),
+  createdAt: text("created_at").notNull(),
+  createdBy: text("created_by"),
+  lastSeenAt: text("last_seen_at"),
+});
+
+export const hubMessages = sqliteTable("hub_messages", {
+  id: text("id").primaryKey(),
+  threadId: text("thread_id").notNull(),
+  senderEmail: text("sender_email").notNull(),
+  senderName: text("sender_name").notNull(),
+  senderRole: text("sender_role").notNull(),
+  recipientEmail: text("recipient_email"),
+  recipientRole: text("recipient_role"),
+  subject: text("subject").notNull(),
+  body: text("body").notNull(),
+  category: text("category").notNull(),
+  priority: text("priority").notNull(),
+  createdAt: text("created_at").notNull(),
+  readAt: text("read_at"),
+  acknowledgedAt: text("acknowledged_at"),
+  replyTo: text("reply_to"),
+});
+
+export const hubAssignments = sqliteTable("hub_assignments", {
+  id: text("id").primaryKey(),
+  assignedByEmail: text("assigned_by_email").notNull(),
+  assignedByName: text("assigned_by_name").notNull(),
+  assignedToEmail: text("assigned_to_email").notNull(),
+  title: text("title").notNull(),
+  instructions: text("instructions").notNull(),
+  category: text("category").notNull(),
+  priority: text("priority").notNull(),
+  dueAt: text("due_at"),
+  status: text("status").notNull(),
+  response: text("response"),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+});
+
+export const hubAuditEvents = sqliteTable("hub_audit_events", {
+  id: text("id").primaryKey(),
+  actorEmail: text("actor_email").notNull(),
+  actorRole: text("actor_role").notNull(),
+  action: text("action").notNull(),
+  targetType: text("target_type").notNull(),
+  targetId: text("target_id"),
+  detail: text("detail").notNull(),
+  createdAt: text("created_at").notNull(),
+});
+
+export const staffWorkProfiles = sqliteTable("staff_work_profiles", {
+  email: text("email").primaryKey(),
+  maxDailyHours: text("max_daily_hours").notNull().default("8"),
+  maxDailySessions: text("max_daily_sessions").notNull().default("6"),
+  maxHighSupportSessions: text("max_high_support_sessions").notNull().default("2"),
+  lunchAfterMinutes: text("lunch_after_minutes").notNull().default("240"),
+  transitionBufferMinutes: text("transition_buffer_minutes").notNull().default("20"),
+  agePattern: text("age_pattern").notNull().default("mixed_with_buffers"),
+  childDays: text("child_days").notNull().default("[]"),
+  adultDays: text("adult_days").notNull().default("[]"),
+  preferencesConfirmedAt: text("preferences_confirmed_at"),
+  approvedByEmail: text("approved_by_email"),
+  updatedAt: text("updated_at").notNull(),
+});
+
+export const scheduleBlocks = sqliteTable("schedule_blocks", {
+  id: text("id").primaryKey(),
+  staffEmail: text("staff_email").notNull(),
+  startsAt: text("starts_at").notNull(),
+  durationMinutes: text("duration_minutes").notNull(),
+  clientCode: text("client_code").notNull(),
+  ageBand: text("age_band").notNull(),
+  supportIntensity: text("support_intensity").notNull(),
+  status: text("status").notNull().default("scheduled"),
+  createdAt: text("created_at").notNull(),
+});
+
+export const safetyAlerts = sqliteTable("safety_alerts", {
+  id: text("id").primaryKey(),
+  staffEmail: text("staff_email").notNull(),
+  alertType: text("alert_type").notNull(),
+  severity: text("severity").notNull(),
+  status: text("status").notNull(),
+  detail: text("detail").notNull(),
+  actionTaken: text("action_taken"),
+  createdAt: text("created_at").notNull(),
+  escalatedAt: text("escalated_at"),
+  acknowledgedAt: text("acknowledged_at"),
+  acknowledgedBy: text("acknowledged_by"),
+  actionedAt: text("actioned_at"),
+  actionedBy: text("actioned_by"),
+  supervisorSignoffAt: text("supervisor_signoff_at"),
+  supervisorSignoffBy: text("supervisor_signoff_by"),
+  closedAt: text("closed_at"),
+  closedBy: text("closed_by"),
+});
+
+export const shiftCheckins = sqliteTable("shift_checkins", {
+  id: text("id").primaryKey(),
+  staffEmail: text("staff_email").notNull(),
+  shiftStartedAt: text("shift_started_at").notNull(),
+  shiftEndedAt: text("shift_ended_at"),
+  lunchDueAt: text("lunch_due_at").notNull(),
+  lunchStartedAt: text("lunch_started_at"),
+  lunchFinishedAt: text("lunch_finished_at"),
+  breakState: text("break_state").notNull(),
+  workloadCheck: text("workload_check"),
+  supportRequested: text("support_requested").notNull().default("0"),
+  updatedAt: text("updated_at").notNull(),
+});
+
+export const receptionQueue = sqliteTable("reception_queue", {
+  id: text("id").primaryKey(),
+  assignedToEmail: text("assigned_to_email"),
+  clientCode: text("client_code").notNull(),
+  itemType: text("item_type").notNull(),
+  detail: text("detail").notNull(),
+  priority: text("priority").notNull(),
+  dueAt: text("due_at"),
+  status: text("status").notNull(),
+  escalatedToEmail: text("escalated_to_email"),
+  outcome: text("outcome"),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+});
+
+export const practiceMemory = sqliteTable("practice_memory", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  memoryType: text("memory_type").notNull(),
+  scope: text("scope").notNull(),
+  ownerEmail: text("owner_email").notNull(),
+  ownerRole: text("owner_role").notNull(),
+  status: text("status").notNull(),
+  statusBeforeDelete: text("status_before_delete"),
+  source: text("source").notNull(),
+  tags: text("tags").notNull().default(""),
+  version: text("version").notNull().default("1"),
+  useCount: text("use_count").notNull().default("0"),
+  helpfulCount: text("helpful_count").notNull().default("0"),
+  reviewCount: text("review_count").notNull().default("0"),
+  lastUsedAt: text("last_used_at"),
+  approvedAt: text("approved_at"),
+  approvedBy: text("approved_by"),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+  deletedAt: text("deleted_at"),
+  deletedBy: text("deleted_by"),
+  deleteReason: text("delete_reason"),
+});

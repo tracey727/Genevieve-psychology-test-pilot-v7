@@ -1,0 +1,17 @@
+{
+  "product": "GENEVIEVE HEALTH Mood & Mind Psychology Safety Platform",
+  "build": "MIND-2.0.0",
+  "verified_at": "2026-07-18",
+  "scope": "controlled fictional-data psychology-practice demonstration",
+  "checks": {
+    "javascript_syntax": "pass",
+    "core_workflow_tests": "pass",
+    "dom_smoke_test": "pass",
+    "psychology_only_content_guard": "pass",
+    "json_validation": "pass",
+    "html_local_reference_check": "pass",
+    "local_http_smoke": "pass",
+    "required_modules": "pass"
+  },
+  "production_boundary": "Not approved for real health or worker information. Production security, privacy, clinical governance, WHS, insurance and integration reviews remain required."
+}

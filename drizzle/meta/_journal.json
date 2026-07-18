@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1784368020187,
+      "tag": "0000_ancient_longshot",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1784369244446,
+      "tag": "0001_unique_tinkerer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1784372053721,
+      "tag": "0002_quiet_zarek",
+      "breakpoints": true
+    }
+  ]
+}

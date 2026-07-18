@@ -1,0 +1,10 @@
+{
+  "name": "mood-and-mind-genevieve-psychology-safety-platform",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Controlled fictional-data psychology-practice safety, supervision, continuity and audit demonstration for Mood & Mind Centre.",
+  "scripts": {
+    "test": "node tests/run-tests.js && node tests/smoke-app.js && node tests/content-guard.js",
+    "serve": "python -m http.server 8080"
+  }
+}

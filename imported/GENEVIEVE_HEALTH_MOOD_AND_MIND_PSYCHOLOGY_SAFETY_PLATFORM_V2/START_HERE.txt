@@ -1,0 +1,30 @@
+GENEVIEVE HEALTH™ — MOOD & MIND CENTRE
+PSYCHOLOGY SAFETY PLATFORM V2
+Build: MIND-2.0.0
+
+1. Extract the ZIP completely.
+2. Open index.html for a quick Windows demonstration.
+3. For the most reliable local test, open a terminal in this folder and run:
+      python -m http.server 8080
+   Then open http://localhost:8080
+4. Keep all data fictional. Do not enter real client or worker information.
+5. Use the Demo role selector to show Irene, clinical lead, psychologist,
+   provisional psychologist, reception and read-only audit views.
+6. Use the four Official demo controls on the Command Centre to demonstrate:
+   staff absence, distressed caller, provisional supervision gap and WHS incident.
+
+THIS V2 REMOVES NON-PSYCHOLOGY CARE WORKFLOWS.
+It replaces them with:
+- clinical psychology staff and capability records;
+- provisional psychologist supervision and scope gates;
+- client continuity and accepted coverage;
+- reception scripts and clinician escalation;
+- psychology-practice safety checks;
+- psychosocial hazard, aggression and lone-work controls;
+- WorkCover reporting reminders and restricted worker-event records;
+- workers compensation, professional indemnity and business insurance registers;
+- audit reports and evidence-gated closure.
+
+CONTROLLED DEMO ONLY
+This is deployable as a fictional-data demonstration. It is not yet a production
+clinical system. See README.md and docs/PRODUCTION_READINESS_CHECKLIST.md.
