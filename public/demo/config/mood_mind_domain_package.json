@@ -1,0 +1,13 @@
+{
+  "package_id": "genevieve-health-mood-mind-psychology-v2",
+  "version": "2.0.0",
+  "organisation": "Mood & Mind Centre",
+  "domain": "private psychology practice",
+  "data_mode": "fictional-demo-only",
+  "roles": ["practice_director","clinical_lead_board_approved_supervisor","psychologist","provisional_psychologist","reception_practice_manager","read_only_auditor"],
+  "severity_states": ["green","yellow","amber","red","black"],
+  "workflow": ["detected","assigned","accepted","actioned","outcome_recorded","reviewed","closed"],
+  "enabled_modules": ["command_centre","appointments","workforce_coverage","provisional_supervision","client_continuity","reception_support","referrals_waitlist","obligations_escalation","immediate_safety_concern","incidents_near_misses","practice_safety_checks","whs_psychosocial_hazards","workcover_reporting_review","insurance_register","training_policies","audit_exports"],
+  "prohibited_automation": ["diagnosis","treatment_recommendation","suicide_risk_score","safe_or_unsafe_declaration","automatic_police_contact","automatic_family_contact","automatic_emergency_contact","therapy_note_storage_in_demo"],
+  "production_required": ["approved_governance","secure_identity_and_mfa","role_based_access","encrypted_backend","protected_audit_log","privacy_and_cyber_review","approved_emergency_process","whs_consultation","insurance_verification","practice_system_integration","device_and_user_acceptance_testing"]
+}
